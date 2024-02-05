@@ -1,0 +1,95 @@
+
+<div class="container mt-4">
+  <div class="grid">
+    <div class="col-12 md:col-6">
+      <div>
+        <label for="searchTerm">Search Foyer:</label>
+        <input type="text" id="searchTerm" [(ngModel)]="searchTerm">
+        <button class="btn btn-primary" (click)="searchByName()">Search</button>
+      </div>
+      <br>
+
+      <!-- Search Results Table -->
+      <div *ngIf="searchResults.length > 0; else universityList">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Capacity</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let uni of searchResults">
+              <td>{{ uni.nomFoyer }}</td>
+              <td>{{ uni.capaciteFoyer }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="deletefoyer(uni.idFoyer)">Delete</button>
+                <button class="btn btn-secondary" (click)="navigateToUpdatefoyer(uni.idFoyer)">Modify</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- University List Table -->
+      <ng-template #universityList>
+        <div *ngIf="listUnis.length > 0; else noData">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Capacity</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let uni of listUnis">
+                <td>{{ uni.nomFoyer }}</td>
+                <td>{{ uni.capaciteFoyer }}</td>
+                <td>
+                  <button class="btn btn-danger" (click)="deletefoyer(uni.idFoyer)">Delete</button>
+                  <button class="btn btn-secondary" (click)="navigateToUpdatefoyer(uni.idFoyer)">Modify</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ng-template #noData>
+          <p>No universities available.</p>
+        </ng-template>
+
+        <button class="btn btn-success" (click)="exportExcel()">Export Excel</button>
+
+        <button (click)="showForm = !showForm" class="btn btn-primary">
+          {{ showForm ? 'Cancel' : 'Add Foyer' }}
+        </button>
+      </ng-template>
+
+      <!-- University Form -->
+      <div class="card mt-3">
+        <div *ngIf="showForm" class="card-body">
+          <h2 class="card-title">Add Foyer</h2>
+          <form #fForm="ngForm" (ngSubmit)="addfoyer(newUni)">
+            <label for="nomUniversite">Foyer Name:</label>
+            <input type="text" id="nomUniversite" name="nomUniversite" [(ngModel)]="newUni.nomFoyer" class="form-control"
+              required pattern="[A-Za-z].*">
+            <div *ngIf="fForm.controls['nomUniversite']?.hasError('pattern')" style="color: red;">
+              Foyer name must start with a letter.
+            </div>
+
+            <label for="address">Capacity:</label>
+            <input type="text" id="address" name="address" [(ngModel)]="newUni.capaciteFoyer" class="form-control"
+              required pattern="[0-9]*">
+            <div *ngIf="fForm.controls['address']?.hasError('pattern')" style="color: red;">
+              Foyer capacity must start with numbers.
+            </div>
+
+            <button type="submit" [disabled]="fForm.invalid" class="btn btn-success">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Update Chambre</h2>
+
+      <form [formGroup]="reactiveForm" (ngSubmit)="update()">
+        <div class="form-group">
+          <label for="idChambre" hidden>Chambre ID:</label>
+          <input type="text" id="idChambre" formControlName="idChambre" hidden>
+        </div>
+
+        <div class="form-group">
+            <label for="numeroChambre">Room number:</label>
+            <input type="text" id="numeroChambre" formControlName="numeroChambre" pattern="[0-9]{1,3}" class="form-control">
+            <div *ngIf="reactiveForm.get('numeroChambre')?.hasError('pattern')" style="color: red;">
+              Room number must start with a Number between 0 and 999
+            </div>
+          
+          
+            
+        </div>
+        <div class="form-group">
+            <label for="typeC"> Room Type:</label>
+            <select id="typeC" formControlName="typeC" class="form-control">
+              <option value="SIMPLE">SIMPLE</option>
+              <option value="DOUBLE">DOUBLE</option>
+              <option value="TRIPLE">TRIPLE</option>
+            </select>
+          </div>
+          
+
+        <button type="submit" [disabled]="reactiveForm.invalid" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+  </div>
+</div>

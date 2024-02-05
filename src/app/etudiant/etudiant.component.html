@@ -1,0 +1,46 @@
+
+<div class="container">
+    <h2>Ajouter un étudiant avec réservations</h2>
+    <form [formGroup]="etudiantForm" (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label for="nomEt">Nom:</label>
+        <input type="text" id="nomEt" formControlName="nomEt" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="prenomEt">Prénom:</label>
+        <input type="text" id="prenomEt" formControlName="prenomEt" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="ecole">École:</label>
+        <input type="text" id="ecole" formControlName="ecole" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="dateNaissance">Date de naissance:</label>
+        <input type="date" id="dateNaissance" formControlName="dateNaissance" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="studentEmail">Email:</label>
+        <input type="email" id="studentEmail" formControlName="studentEmail" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="cin">CIN:</label>
+        <input type="text" id="cin" formControlName="cin" pattern="[0-9]+" class="form-control" required>
+        <div *ngIf="etudiantForm.get('cin')?.hasError('pattern')" style="color: red;">
+          CIN invalide. Veuillez saisir uniquement des chiffres.
+        </div>
+      </div>
+  
+      
+      
+  
+      
+  
+      <button type="submit" [disabled]="etudiantForm.invalid"class="btn btn-primary">Ajouter l'étudiant</button>
+    </form>
+  </div>
+  

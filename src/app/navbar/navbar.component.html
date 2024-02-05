@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #76c9f5; padding: 10px;">
+  <div class="container-fluid">
+      <!-- Add image before the "Accueil" link -->
+      <a class="navbar-brand" href="#">
+          <img src="../../assets/logoes.png" alt="Logo" height="40" width="80" class="mr-2">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto"> <!-- Align items to the right -->
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" routerLink="/home" style="font-weight: bold;">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="user/listuser" style="font-weight: bold;">User</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="/Etudiant/" style="font-weight: bold;">Student</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="/universite" style="font-weight: bold;">University</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="/foy/foyer" style="font-weight: bold;">Foyer</a>
+              </li>
+             
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="/Bloc/list" style="font-weight: bold;">Bloc</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="/Chambre/listchambre" style="font-weight: bold;">Chamber</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/reservation" style="font-weight: bold;">Reservation</a>
+            </li>
+
+              <li class="nav-item ">
+                  <a class="nav-link btn" (click)="logout()" style="font-weight: bold;">Logout</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<br>

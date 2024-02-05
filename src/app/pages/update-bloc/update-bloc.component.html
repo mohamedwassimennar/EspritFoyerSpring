@@ -1,0 +1,31 @@
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Update Bloc</h2>
+
+      <form [formGroup]="reactiveForm" (ngSubmit)="update()">
+        <div class="form-group">
+          <label for="idBloc" hidden>Bloc ID:</label>
+          <input type="text" id="idBloc" formControlName="idBloc" hidden>
+        </div>
+
+        <div class="form-group">
+          <label for="nomBloc">Bloc Name:</label>
+          <input type="text" id="nomBloc" formControlName="nomBloc" pattern="[A-Za-z].*" class="form-control">
+          <div *ngIf="reactiveForm.get('nomBloc')?.hasError('pattern')" style="color: red;">
+            Bloc name must start with a letter.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="capacitebloc"> Bloc Capacity:</label>
+          <input type="text" id="capacitebloc" formControlName="capacitebloc" class="form-control" required pattern="[0-9999].*">
+          
+        </div>
+
+        <button type="submit" [disabled]="reactiveForm.invalid" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+  </div>
+</div>

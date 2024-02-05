@@ -1,0 +1,30 @@
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Update Foyer</h2>
+
+      <form [formGroup]="reactiveForm" (ngSubmit)="update()">
+        <div class="form-group">
+          <label for="idFoyer" hidden>Foyer ID:</label>
+          <input type="text" id="idFoyer" formControlName="idFoyer" hidden class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="nomFoyer">Foyer Name:</label>
+          <input type="text" id="nomFoyer" formControlName="nomFoyer" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="capaciteFoyer">Capacite:</label>
+          <input type="text" id="capaciteFoyer" formControlName="capaciteFoyer" pattern="[0-9]*" class="form-control">
+          <div *ngIf="reactiveForm.get('capaciteFoyer')?.hasError('pattern')" style="color: red;">
+            Please enter only numbers.
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="reactiveForm.invalid" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+  </div>
+</div>

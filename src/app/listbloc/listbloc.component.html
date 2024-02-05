@@ -1,0 +1,69 @@
+
+  
+  <div class="container mt-4">
+    <div>
+      <label for="searchTerm">Search Bloc:</label>
+      <input type="text" id="searchTerm" [(ngModel)]="searchTerm">
+      <button class="btn btn-primary" (click)="searchByName()">Search</button>
+    </div>
+      <div *ngIf="searchResults.length > 0; else listBloc">
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th>Bloc Name</th>
+              <th>Capacity Bloc</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let bloc of searchResults">
+              <td>{{ bloc.nomBloc }}</td>
+              <td>{{ bloc.capacitebloc }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteBloc(bloc.idBloc)">Delete</button>
+                <button class="btn btn-warning" (click)="navigateToUpdateBloc(bloc.idBloc)">Modify</button>
+
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <!-- etudiant list -->
+      <ng-template #listBloc>
+        <div *ngIf=" listBlocs.length > 0; else noData">
+          <table class="table mt-3">
+            <thead>
+              <tr>
+                <th>Bloc Name</th>
+                <th>Capacity Bloc</th>
+              <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let bloc of listBlocs">
+                <td>{{bloc.nomBloc}}</td>
+                <td>{{bloc.capacitebloc }}</td>
+                
+              
+                <td>
+                  <button class="btn btn-danger" (click)="deleteBloc(bloc.idBloc)">Delete</button>
+                  
+                  <button class="btn btn-warning" (click)="navigateToUpdateBloc(bloc.idBloc)">Modify</button>
+
+                 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    
+        <ng-template #noData>
+          <p>No Bloc available.</p>
+        </ng-template>
+    
+        <button class="btn btn-primary" (click)="goToAddBlocPage()">Add Bloc</button>
+
+        
+        
+      </ng-template>

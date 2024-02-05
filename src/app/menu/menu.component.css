@@ -1,0 +1,28 @@
+/* Add this to your styles.css or a dedicated CSS file */
+.sidebar-nav {
+    width: 250px; /* Set the width of the sidebar */
+    height: 100vh; /* Make the sidebar full height */
+    background-color: #343a40; /* Set the background color */
+    color: #ffffff; /* Set the text color */
+    padding-top: 20px; /* Add some padding at the top */
+  }
+  
+  .sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-nav ul li {
+    padding: 10px;
+    border-bottom: 1px solid #555; /* Add a border between list items */
+  }
+  
+  .sidebar-nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .sidebar-nav ul li:hover {
+    background-color: #555; /* Change background color on hover */
+  }
+  

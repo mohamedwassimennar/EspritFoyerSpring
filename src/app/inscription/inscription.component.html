@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input formControlName="nom" type="text" class="form-control" id="name" name="name" value="">
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input formControlName="prenom" type="text" class="form-control" id="prenom" name="prenom" value="">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input formControlName="email" type="email" class="form-control" id="email" name="email" value="">
+                </div>
+                <div class="form-group">
+                    <label for="mdp">Mot de passe</label>
+                    <input formControlName="mdp" type="password" class="form-control" id="mdp" name="mdp" value="">
+                </div>
+                <div class="form-group">
+                    <label for="role">Rôle:</label>
+                    <select id="role" formControlName="role" required class="form-select" aria-label="Default select example">
+                        <option value="1">ADMIN</option>
+                        <option value="2">RESPONSABLE</option>
+                        <option value="3">ETUDIANT</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p><br/> J'ai déjà un compte? <a href="login" title="Se connecter">Se connecter</a></p>
+                    <input type="submit" value="S'inscrire" id="submit" name="submit" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

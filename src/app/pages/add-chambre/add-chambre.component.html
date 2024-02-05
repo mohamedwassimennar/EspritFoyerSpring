@@ -1,0 +1,32 @@
+
+<div class="container mt-4">
+    <!-- Display search results or the list of blocs -->
+    <div *ngIf="searchResults.length > 0; else listChambre">
+      <!-- Display search results if any -->
+    </div>
+  
+    <!-- Bloc list -->
+    <ng-template #listChambre>
+      <!-- Bloc Form always visible -->
+      <div>
+        <h2 class="mt-3">Add Chamber</h2>
+        <form #chambreForm="ngForm" (ngSubmit)="addChambre(newChambre)">
+          <label for="numeroChambre">Numero Chambre:</label>
+          <input type="text" id="numeroChambre" name="numeroChambre" [(ngModel)]="newChambre.numeroChambre" class="form-control" required pattern="[0-9].*">
+          <div *ngIf="chambreForm.controls['numeroChambre']?.hasError('pattern')" style="color: red;">
+            Only Numbers are accepted
+          </div>
+  
+          <label for="typeC">Type Chamber:</label>
+          <input type="text" id="typeC" name="typeC" [(ngModel)]="newChambre.typeC" class="form-control" required>
+  
+          <button type="submit" class="btn btn-success" [disabled]="!chambreForm.valid">Add</button>
+        </form>
+      </div>
+    </ng-template>
+  
+    <ng-template #noData>
+      <p>No Chambre available.</p>
+    </ng-template>
+  </div>
+  

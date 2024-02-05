@@ -1,0 +1,8 @@
+<!-- app.component.html -->
+
+
+<div class="role-statistics-container">
+  <div *ngFor="let role of roleStatistics | keyvalue" class="role-statistics-item">
+    <p>{{ role.key }}: {{ role.value }}</p>
+  </div>
+</div>

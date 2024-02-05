@@ -1,0 +1,84 @@
+
+<div class="container mt-4">
+  <div>
+    <label for="searchTerm">Search University:</label>
+    <input type="text" id="searchTerm" [(ngModel)]="searchTerm">
+    <button class="btn btn-primary" (click)="searchByName()">Search</button>
+  </div>
+
+  <!-- Display search results or the list of universities -->
+  <div *ngIf="searchResults.length > 0; else universityList">
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th>University Name</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let uni of searchResults">
+          <td>{{ uni.nomUniversite }}</td>
+          <td>{{ uni.address }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteUni(uni.idUniversite)">Delete</button>
+            <button class="btn btn-warning" (click)="navigateToUpdateUni(uni.idUniversite)">Modify</button>
+            <button class="btn btn-success" (click)="downloadQRCode(uni.idUniversite)">Download QR Code</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- University list -->
+  <ng-template #universityList>
+    <div *ngIf="listUnis.length > 0; else noData">
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th>University Name</th>
+            <th>Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let uni of listUnis">
+            <td>{{ uni.nomUniversite }}</td>
+            <td>{{ uni.address }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteUni(uni.idUniversite)">Delete</button>
+              <button class="btn btn-warning" (click)="navigateToUpdateUni(uni.idUniversite)">Modify</button>
+              <button class="btn btn-success" (click)="downloadQRCode(uni.idUniversite)">Download QR Code</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #noData>
+      <p>No universities available.</p>
+    </ng-template>
+
+    <button class="btn btn-primary" (click)="showForm = !showForm">
+      {{ showForm ? 'Cancel' : 'Add University' }}
+    </button>
+  </ng-template>
+
+  <!-- University Form -->
+  <div *ngIf="showForm">
+    <h2 class="mt-3">Add University</h2>
+    <form #universityForm="ngForm" (ngSubmit)="addUni(newUni)">
+      <label for="nomUniversite">University Name:</label>
+      <input type="text" id="nomUniversite" name="nomUniversite" [(ngModel)]="newUni.nomUniversite" class="form-control"
+        required pattern="[A-Za-z].*">
+      <div *ngIf="universityForm.controls['nomUniversite']?.hasError('pattern')" style="color: red;">
+        University name must start with a letter.
+      </div>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" [(ngModel)]="newUni.address" class="form-control" required>
+
+      <button type="submit" class="btn btn-success" [disabled]="universityForm.invalid">Add</button>
+    </form>
+  </div>
+</div>

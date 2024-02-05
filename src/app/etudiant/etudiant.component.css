@@ -1,0 +1,44 @@
+mat-form-field {
+    display: block;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+/* navbar.component.css */
+
+nav {
+    background-color: #ded0d0;
+    padding: 8px;
+    font-family: 'Arial', sans-serif; /* Changer la police de la barre de navigation, ajustez selon vos besoins */
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .nav-item {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+  }
+  
+  .nav-item a:hover {
+    background-color: #cf7f7f;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5em; /* Taille de la police pour le titre, ajustez selon vos besoins */
+    font-weight: bold; /* Gras pour le titre, ajustez selon vos besoins */
+    color: #333; /* Couleur du texte du titre, ajustez selon vos besoins */
+  }
+  

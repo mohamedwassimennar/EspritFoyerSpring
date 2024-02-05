@@ -1,0 +1,110 @@
+
+<div class="etudiants-panel">
+
+  <div class="header">
+
+    <h2 class="title">All Students</h2>
+
+    <button mat-mini-fab routerLink="/Etudiant/add">
+      <mat-icon class="add-etudiant-btn">add</mat-icon>
+    </button>
+
+  </div>
+
+
+  <mat-tab-group>
+
+        <mat-tab label="liste">
+
+            <app-etudiant-card-list [listEtudiant]="listEtudiants">
+
+            </app-etudiant-card-list>
+
+        </mat-tab>
+  </mat-tab-group>
+        
+
+    
+
+
+
+</div>
+
+<!--div class="container mt-4">
+    <div>
+        <label for="searchTerm">Search University:</label>
+        <input type="text" id="searchTerm" [(ngModel)]="searchTerm">
+        <button class="btn btn-primary" (click)="searchByName()">Search</button>
+    </div>
+  
+    
+    <div *ngIf="searchResults.length > 0; else listEtudiant">
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Ecole</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let etudiant of searchResults">
+            <td>{{ etudiant.nomEt }}</td>
+            <td>{{ etudiant.ecole }}</td>
+            <td>{{ etudiant.studentEmail }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteEtudiant(etudiant.idEtudiant)">Delete</button>
+              <button class="btn btn-warning" (click)="navigateToUpdate(etudiant.idEtudiant)">Modify</button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    
+    <ng-template #listEtudiant>
+      <div *ngIf=" listEtudiants.length > 0; else noData">
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Ecole</th>
+              <th>Email</th>
+              <th>Cin</th>
+             
+              <th>DateNaissance</th>
+            <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let etudiant of listEtudiants">
+              <td>{{etudiant.nomEt}}</td>
+              <td>{{ etudiant.prenomEt }}</td>
+              <td>{{etudiant.ecole}}</td>
+            
+            <td>{{etudiant.studentEmail}}</td>
+            <td>{{etudiant.cin}}</td>
+            <td>{{etudiant.dateNaissance}}</td>
+            
+              <td>
+                <button class="btn btn-danger" (click)="deleteEtudiant(etudiant.idEtudiant)">Delete</button>
+                <button class="btn btn-warning" (click)="navigateToUpdate(etudiant.idEtudiant)">Modify</button>
+               
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <ng-template #noData>
+        <p>No etudiants available.</p>
+      </ng-template>
+  
+      <button class="btn btn-primary" (click)="showForm = !showForm">
+        {{ showForm ? 'Cancel' : 'Add Etudiant' }}
+      </button>
+    </ng-template>
+  
+</div!-->

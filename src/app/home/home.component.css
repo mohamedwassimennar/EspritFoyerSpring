@@ -1,0 +1,29 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .role-statistics-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center; /* Center the container */
+  }
+  
+  .role-statistics-item {
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    padding: 20px; /* Increased padding for better spacing */
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Increased border radius for a rounded appearance */
+    box-sizing: border-box;
+    font-size: 1.2em; /* Increased font size */
+  }
+  

@@ -1,0 +1,46 @@
+/* Styles for the overall container */
+.container {
+    display: flex;
+  }
+  
+  /* Styles for the navbar at the top */
+  app-navbar {
+    /* Add any styles you want for the navbar */
+    width: 100%;
+    background-color: #333; /* Example background color */
+    color: white; /* Example text color */
+  }
+  
+  /* Styles for the sidebar/menu on the left */
+  .sidebar {
+    /* Add any styles you want for the sidebar */
+    width: 200px; /* Example width for the sidebar */
+    background-color: #f4f4f4; /* Example background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+  }
+  
+  app-menu {
+    /* Add any styles you want for the menu */
+    width: 100%; /* Set the width to 100% to fill the sidebar */
+  }
+  
+  /* Styles for the QR code in the main content area */
+  .container > div {
+    /* Add any styles you want for the main content area */
+    flex: 1; /* This makes the main content area take up the remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+  }
+  
+  img {
+    /* Add any styles you want for the QR code image */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain the image's aspect ratio */
+    display: block; /* Remove any default inline spacing */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+  

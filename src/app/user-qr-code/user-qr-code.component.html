@@ -1,0 +1,11 @@
+<!-- user-qr-code.component.html -->
+<div class="container">
+  <div class="sidebar">
+    <app-menu></app-menu>
+  </div>
+  <div class="content">
+    <h2>QR Code for User</h2>
+    <!-- Display the QR code image here -->
+    <img *ngIf="qrCodeImage" [src]="qrCodeImage" alt="QR Code">
+  </div>
+</div>

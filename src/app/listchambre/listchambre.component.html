@@ -1,0 +1,60 @@
+ 
+<div class="container mt-4">
+    <!-- Display search results or the list of chambres -->
+    <div *ngIf="searchResults.length > 0; else listChambre">
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th> Chamber Number</th>
+            <th>Type Chamber</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let chambre of searchResults">
+            <td>{{ chambre.numeroChambre }}</td>
+            <td>{{ chambre.typeC }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteChambre(chambre.idChambre)">Delete</button>
+              <button class="btn btn-warning" (click)="navigateToUpdateChambre(chambre.idChambre)">Modify</button>
+              <button class="btn btn-success" (click)="downloadQRCode(chambre.idChambre)">Download QR Code</button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Chambre list -->
+    <ng-template #listChambre>
+      <div *ngIf="listChambres.length > 0; else noData">
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th>Numero Chambre</th>
+              <th>Type Chambre</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let chambre of listChambres">
+              <td>{{ chambre.numeroChambre }}</td>
+              <td>{{ chambre.typeC }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteChambre(chambre.idChambre)">Delete</button>
+                <button class="btn btn-warning" (click)="navigateToUpdateChambre(chambre.idChambre)">Modify</button>
+                <button class="btn btn-success" (click)="downloadQRCode(chambre.idChambre)">Download QR Code</button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <ng-template #noData>
+        <p>No Chambre available.</p>
+      </ng-template>
+      <button class="btn btn-primary" (click)="goToAddChambrePage()">Add Chambre</button>
+
+    </ng-template>
+  </div>
+  

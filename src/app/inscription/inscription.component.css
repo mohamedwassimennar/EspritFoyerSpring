@@ -1,0 +1,23 @@
+form {
+    max-width: 400px; /* Ajustez la largeur maximale selon vos besoins */
+    margin: auto;
+  }
+  
+  div {
+    margin-bottom: 15px; /* Espacement entre les champs */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px; /* Espacement entre les étiquettes et les champs */
+  }
+
+.form-container {
+    margin-top: 20px; /* Adjust the value as needed */
+  }
+  
+.submit-button {
+    margin-right: 10px; /* Adjust the value as needed */
+  }
+  
+  

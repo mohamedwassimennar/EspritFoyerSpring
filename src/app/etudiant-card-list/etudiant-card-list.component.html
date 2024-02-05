@@ -1,0 +1,45 @@
+
+<mat-card *ngFor="let etudiant of listEtudiant" class="course-card mat-elevation-z10">
+
+    <mat-card-header>
+      
+      <mat-card-title>{{ etudiant.nomEt }}</mat-card-title>
+  
+    </mat-card-header>
+  
+    <mat-card-content>
+      <p>{{ etudiant.prenomEt }}</p>
+    </mat-card-content>
+  
+    <mat-card-content>
+      
+      <p>{{ etudiant.ecole }}</p>
+    </mat-card-content>
+  
+    <mat-card-content>{{ etudiant.studentEmail }}</mat-card-content>
+    <mat-card-content>{{ etudiant.dateNaissance }}</mat-card-content>
+    <mat-card-content>{{ etudiant.cin }}</mat-card-content>
+    
+  
+    <mat-card-content>
+      <p>Reservations:</p>
+      <ul>
+        <li *ngFor="let reservation of etudiant.reservations">
+          ID: {{ reservation.estValide }}, Status: {{ reservation.status }}
+        </li>
+      </ul>
+    </mat-card-content>
+  
+    <mat-card-actions class="course-actions">
+  
+      <button mat-button mat-raised-button color="primary" [routerLink]="['update', etudiant.idEtudiant]">
+        Update Etudiant
+      </button>
+      <button class="btn btn-danger" (click)="deleteEtudiant(etudiant.idEtudiant)">Delete</button>
+      
+  
+    </mat-card-actions>
+  
+  </mat-card>
+  
+  

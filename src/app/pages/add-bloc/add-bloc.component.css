@@ -1,0 +1,109 @@
+
+.table {
+    width: 100%;
+    margin-top: 20px; /* Ajoutez de l'espace au-dessus du tableau */
+    border-collapse: collapse; /* Fusionne les bordures de la table */
+  }
+  
+  .table th, .table td {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #bd5d31; /* Couleur de fond de l'en-tête */
+    color: white; /* Couleur du texte de l'en-tête */
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Couleur de fond des lignes paires */
+  }
+  
+  .table tbody tr:hover {
+    background-color: #d3d3d3; /* Couleur de fond au survol d'une ligne */
+  }
+  
+  .btn-danger {
+    margin-top: 5px; /* Ajoutez de l'espace au-dessus du bouton Supprimer */
+  }
+  /* styles.css (ou votre fichier de styles personnalisés) */
+  
+  .btn-custom {
+    background-color: #28a745; /* Couleur de fond verte pour le bouton "Modifier" */
+    color: #fff; /* Couleur du texte blanc */
+    border: 1px solid #218838; /* Bordure verte plus foncée */
+    padding: 8px 16px; /* Espacement intérieur */
+    border-radius: 4px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de type pointeur au survol */
+    transition: background-color 0.3s ease; /* Animation de transition pour la couleur de fond */
+  }
+  
+  .btn-custom:hover {
+    background-color: #218838; /* Couleur de fond plus foncée au survol */
+  }
+  /* styles.css (ou votre fichier de styles personnalisés) */
+  
+  .btn-danger-custom {
+    background-color: #dc3545; /* Couleur de fond rouge pour le bouton "Supprimer" */
+    color: #fff; /* Couleur du texte blanc */
+    border: 1px solid #c82333; /* Bordure rouge plus foncée */
+    padding: 8px 16px; /* Espacement intérieur */
+    border-radius: 4px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de type pointeur au survol */
+    transition: background-color 0.3s ease; /* Animation de transition pour la couleur de fond */
+  }
+  
+  .btn-danger-custom:hover {
+    background-color: #c82333; /* Couleur de fond plus foncée au survol */
+  }
+  /* styles.css (ou votre fichier de styles personnalisés) */
+  
+  .btn-qrcode-custom {
+    background-color: #0f5095; /* Couleur de fond bleue pour le bouton "QR Code" */
+    color: #fff; /* Couleur du texte blanc */
+    border: 1px solid #0056b3; /* Bordure bleue plus foncée */
+    padding: 8px 16px; /* Espacement intérieur */
+    border-radius: 4px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de type pointeur au survol */
+    transition: background-color 0.3s ease; /* Animation de transition pour la couleur de fond */
+  }
+  
+  .btn-qrcode-custom:hover {
+    background-color: #0056b3; /* Couleur de fond plus foncée au survol */
+  }
+
+  /* navbar.component.css */
+
+nav {
+  background-color: #ded0d0;
+  padding: 8px;
+  font-family: 'Arial', sans-serif; /* Changer la police de la barre de navigation, ajustez selon vos besoins */
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+}
+
+.nav-item a:hover {
+  background-color: #cf7f7f;
+}
+
+.navbar-brand {
+  font-size: 1.5em; /* Taille de la police pour le titre, ajustez selon vos besoins */
+  font-weight: bold; /* Gras pour le titre, ajustez selon vos besoins */
+  color: #333; /* Couleur du texte du titre, ajustez selon vos besoins */
+}
